@@ -1,0 +1,2 @@
+rootProject.name = "Flexi Coding"
+include ':app'
