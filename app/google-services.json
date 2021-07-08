@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "283106671697",
+    "project_id": "rishav-chanda-0",
+    "storage_bucket": "rishav-chanda-0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283106671697:android:2c7c5f2b5c3c4ab31acc70",
+        "android_client_info": {
+          "package_name": "com.flexicoding.rishav"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "283106671697-r2kdqrlhadi48sp3iie6lb6pmvlfq789.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flexicoding.rishav",
+            "certificate_hash": "3a13df2386262ed8b9ff154c02e5a05f03d16379"
+          }
+        },
+        {
+          "client_id": "283106671697-fbu6qvsdjbfaaborla6tqge0eh1405me.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVEEXLdl0dSS_8QVG4FuCsYqTBpRKn_e4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "283106671697-fbu6qvsdjbfaaborla6tqge0eh1405me.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
