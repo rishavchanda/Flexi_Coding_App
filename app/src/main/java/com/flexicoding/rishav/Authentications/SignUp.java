@@ -54,7 +54,7 @@ public class SignUp extends AppCompatActivity {
         //check if user is Logged in or not
         checkLogin();
 
-        binding.googlebutton.setOnClickListener(new View.OnClickListener() {
+        binding.googleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openGoogleSignInOption();
@@ -70,6 +70,8 @@ public class SignUp extends AppCompatActivity {
         FirebaseUser firebaseUser = mAuth.getCurrentUser();
         if(firebaseUser != null){
             loginToMainActivity();
+        }else{
+            backToSignIn();
         }
     }
 
@@ -151,9 +153,10 @@ public class SignUp extends AppCompatActivity {
     /**
      * Login user to Main activity*/
     private void loginToMainActivity() {
-        startActivity(new Intent(this, MainActivity.class));
-        finish();
     }
+
+    private void backToSignIn() {}
+
 
 
 

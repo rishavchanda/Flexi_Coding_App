@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Flexi Coding</string>
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="do_you_need_help">Do you need help?</string>
+    <string name="by_signing_up_you_agree_to_our">By signing up you agree to our</string>
+    <string name="privacy_policies">privacy policies</string>
+    <string name="amp"><![CDATA[&]]></string>
+    <string name="terms_and_conditions">terms and conditions</string>
 </resources>
