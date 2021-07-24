@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.flexicoding.rishav.MainActivity;
 import com.flexicoding.rishav.R;
@@ -31,7 +32,6 @@ public class SignUp extends AppCompatActivity {
 
     private ActivitySignUpBinding binding;
 
-    private static final int RC_SIGN_IN = 100;
     private GoogleSignInClient googleSignInClient;
 
     private FirebaseAuth mAuth;
@@ -58,6 +58,13 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openGoogleSignInOption();
+            }
+        });
+
+        binding.doYouNeedHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAuth.signOut();
             }
         });
         
@@ -95,7 +102,7 @@ public class SignUp extends AppCompatActivity {
      * Open Google sign in screen*/
     private void openGoogleSignInOption(){
         Intent intent = googleSignInClient.getSignInIntent();
-        startActivityForResult(intent, RC_SIGN_IN);
+        startActivityForResult(intent, 0);
     }
 
     /**On Activity Result of Google sign in*/
@@ -105,11 +112,15 @@ public class SignUp extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         //Result returned after google sign in activity option chosen
-        if (requestCode == RC_SIGN_IN){
+        if (requestCode == 0){
             Task<GoogleSignInAccount> accountTask = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
                 GoogleSignInAccount account = accountTask.getResult(ApiException.class);
-                firebaseAuthWithGoogleAccount(account);
+                if(account != null){
+                    firebaseAuthWithGoogleAccount(account);
+                }else{
+                    Toast.makeText(this, "Please try again Later", Toast.LENGTH_SHORT).show();
+                }
             }
             catch (Exception e){
                 //failed to sign in
@@ -153,6 +164,8 @@ public class SignUp extends AppCompatActivity {
     /**
      * Login user to Main activity*/
     private void loginToMainActivity() {
+        Intent intent = googleSignInClient.getSignInIntent();
+        startActivityForResult(intent, 0);
     }
 
     private void backToSignIn() {}
